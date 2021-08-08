@@ -8,7 +8,7 @@
     <h1>
         Blog
     </h1> 
-{% for p in posts %}
+{% for p in post_list %}
         <hr/>
     <!--href="/blog/{{p.pk}}" 로 해도됨-->
     <h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2>

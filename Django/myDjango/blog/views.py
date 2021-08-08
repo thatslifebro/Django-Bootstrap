@@ -1,6 +1,16 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Post
 
+class PostList(ListView):
+    model = Post
+    ordering = "-pk"
+
+
+
+
+""""
+FBV로 구현한 부분
 def index(request):
     posts = Post.objects.all().order_by('-pk')
     
@@ -11,7 +21,7 @@ def index(request):
             'posts': posts,
         }
     )
-
+    
 def single_post_page(request,pk):
     post = Post.objects.get(pk=pk)
     
@@ -22,4 +32,6 @@ def single_post_page(request,pk):
             'post': post,
         }
     )
-# Create your views here.
+
+
+"""
