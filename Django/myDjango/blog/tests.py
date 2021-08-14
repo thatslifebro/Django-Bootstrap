@@ -4,7 +4,7 @@ from .models import Post
 
 # Create your tests here.
 
-class TesView(TestCase):
+class TestView(TestCase):
     def setUp(self):
         self.client = Client()
     
