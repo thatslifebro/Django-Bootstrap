@@ -1,7 +1,7 @@
 <!DOCYPE html>
 <html>
 <head>
-    <title>이게 나야</title>
+    <title>{% block head_title %}이게 나야{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <script type="text/javascript" src="what_time_is_it.js"></script>
