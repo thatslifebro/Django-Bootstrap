@@ -11,6 +11,9 @@ class TestView(TestCase):
         self.client = Client()
         self.user_a = User.objects.create_user(username='a',password='aa11aa22')
         self.user_b = User.objects.create_user(username='b',password='bb11bb22')
+        self.user_b.is_staff = True
+        self.user_b.save()
+        
         self.category_me = Category.objects.create(name='imme', slug='imme')
         self.category_you = Category.objects.create(name='youareyou', slug='youareyou')
         
@@ -182,9 +185,13 @@ class TestView(TestCase):
         self.assertNotEqual(response.status_code, 200)
         
         self.client.login(username='a', password='aa11aa22')
+        response = self.client.get('/blog/create_post/')
+        self.assertNotEqual(response.status_code, 200)
         
+        self.client.login(username='b', password='bb11bb22')
         response = self.client.get('/blog/create_post/')
         self.assertEqual(response.status_code, 200)
+        
         soup = BeautifulSoup(response.content, 'html.parser')
         
         self.assertEqual('Create Post - Blog', soup.title.text)
@@ -201,4 +208,4 @@ class TestView(TestCase):
         self.assertEqual(Post.objects.count(),4)
         last_post = Post.objects.last()
         self.assertEqual(last_post.title,"Post Form 만들기")
-        self.assertEqual(last_post.author.username, "a")
+        self.assertEqual(last_post.author.username, "b")
