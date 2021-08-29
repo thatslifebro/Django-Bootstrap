@@ -51,7 +51,7 @@ class PostCreate(LoginRequiredMixin,UserPassesTestMixin, CreateView):
                     if is_tag_created:
                         tag.slug = slugify(t, allow_unicode=True)
                         tag.save()
-                    self.objects.tags.add(tag)
+                    self.object.tags.add(tag)
                     
             return response
             

@@ -220,7 +220,7 @@ class TestView(TestCase):
         self.assertTrue(Tag.objects.count(),5)
         
     def test_update_post(self):
-        update_post_url = f'/blog/update_post/{self.post_003.pk}'
+        update_post_url = f'/blog/update_post/{self.post_003.pk}/'
         
         response = self.client.get(update_post_url)
         self.assertNotEqual(response.status_code, 200)
