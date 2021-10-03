@@ -1,17 +1,83 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>개발자 김성연이다</title>
+    <title>나는 김성연</title>
+    
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/3ee8a3bb53.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav>
-    <a href="/blog/">Blog</a>
-    <a href="/about_me/">About me</a>
-</nav>
-<h1>안뇽하세요. 김성연입니다.</h1>
-<h2>이력</h2>
-<h2>Portfolio</h2>
-<h3>아직 제작중입니다.</h3>
+    
+{% include 'blog/navbar.html' %}
+   
+<section>
+    <div class="mt-4 container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="mt-5">나는 김성연이다.</h1>
+                <br/>
+                <p>
+                    기타, 풋살, 헬스를 좋아한다.
+                    컴퓨터로 이것저것 개발하고 배우는 것이 재밌다.
+                </p>
+                <ul>
+                    <li>개발 경험</li>
+                    <ul>
+                        <li>웹 개발 - Django, nodejs</li>
+                    </ul>
+                    <li>Work Experience</li>
+                    <ul>
+                        <li>고영테크놀러지(인턴 2019.09~2020.02)- Python, Arduino를 이용한 인베디드 시스템으로 장비제어</li>
+                    </ul>
+                    <li>Education</li>
+                    <ul>
+                        <li>경기북과학고등학교 졸업 (2014.03~2016.02)</li>
+                        <li>KAIST 전기및전자공학부 재학중 (2016.03 ~)</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid mt-5" src="{% static 'single_pages/images/ksy.jpg' %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>
+                    PORTFOLIO
+                </h1>
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col-lg-4">
+                무언가 만들자 
+            </div>
+            <div class="col-lg-4">
+                무언가 만들자
+            </div>
+            <div class="col-lg-4">
+                무언가 만들자
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    
 </body>
 </html>
