@@ -8,8 +8,10 @@
         {% endif %}
     {% endif %}
 
-<h1>Blog </h1>{% if category %}<h3><span class="badge badge-secondary">{{ category }}</span></h3>{% endif %}
-{% if tag %}<h3><span class="badge badge-info"><i class="fas fa-tag"></i>{{ tag }} ({{ tag.post_set.count }})</span></h3>{% endif %}
+<h1>Blog 
+{% if search_info %}<small class="text-muted">{{ search_info }}</small>{% endif %}
+{% if category %}<h3><span class="badge badge-secondary">{{ category }}</span></h3>{% endif %}
+{% if tag %}<h3><span class="badge badge-info"><i class="fas fa-tag"></i>{{ tag }} ({{ tag.post_set.count }})</span></h3>{% endif %}</h1>
 
             <!-- BLog post -->
         {% if post_list.exists %}
