@@ -7,3 +7,10 @@ _media/
 local_settings.py
 __pycache__
 *.pyc
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+.idea/
