@@ -14,3 +14,5 @@ venv/
 ENV/
 env.bak/
 .idea/
+.env.prod
+.env.prod.db
